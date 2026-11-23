@@ -6,6 +6,8 @@ Per installazione, requirements e configurazione iniziale segui il
 [README](README.md). Questo file si trova nella cartella principale di Kapa
 e si apre anche dal pulsante **Guida** dell'app.
 
+## File e cartelle
+
 - **Creare file:** crea un file di testo con il contenuto richiesto.
 - **Scrivere nei file:** aggiunge testo a un file esistente.
 - **Dettare testo:** scegli un file, poi detta cosa aggiungere. «Annulla dettatura» annulla.
@@ -18,41 +20,59 @@ e si apre anche dal pulsante **Guida** dell'app.
 - **Rinominare file:** cambia il nome di un file.
 - **Eliminare file:** cancella un file; disponibile solo in modalità testuale.
 - **Svuotare il cestino:** elimina il contenuto del cestino; solo in modalità testuale.
-- **Aprire applicazioni:** avvia un programma installato.
-- **Verificare applicazioni:** controlla se un programma è installato.
-- **Chiudere applicazioni:** chiede la chiusura del programma indicato.
+
+## Multimedia e YouTube
+
 - **Impostare il volume:** porta l'audio alla percentuale richiesta, da 0 a 100.
 - **Regolare il volume:** alza, abbassa, silenzia o riattiva l'audio.
 - **Controllare musica e video:** riproduce, mette in pausa, ferma o cambia traccia.
 - **Cercare su YouTube:** apre i risultati nel browser.
-- **Cercare su Google:** apre i risultati nel browser predefinito, senza chiavi API Google.
 - **Aprire un video YouTube:** apre il video trovato; senza chiave YouTube mostra la ricerca.
+- **Ripetizione e riproduzione casuale:** «ripeti la traccia», «ripeti la playlist», «disattiva ripetizione», «attiva riproduzione casuale», «disattiva riproduzione casuale». «Ricomincia il brano» riporta il brano all'inizio. Questi comandi sono locali; il supporto dipende dal player.
+- **Scelta automatica del lettore:** Kapa dà priorità alle sessioni multimediali dei browser disponibili tramite MPRIS (Brave, Firefox, Chromium e altri), scegliendo prima quelle in riproduzione, poi quelle in pausa. Se non rileva browser, sceglie tra i lettori disponibili come Spotify o VLC, con lo stesso ordine. A parità usa l'ordine di rilevamento, senza chiedere quale lettore usare. Un lettore che non risponde non blocca gli altri. Puoi comunque indicare un nome: «metti in pausa Spotify», «metti play su Firefox», «prossima traccia su VLC». Il nome esplicito prevale sulla scelta automatica. Un browser aperto senza sessione MPRIS non è rilevabile come lettore; non viene avviato un lettore assente.
+
+## Schermo, registrazioni e replay
+
 - **Fare screenshot:** salva il monitor principale, uno specifico, tutti i monitor o la finestra attiva, se supportato.
-- **Mostrare notifiche:** visualizza un messaggio sul desktop.
-- **Copiare testo negli appunti:** prepara il testo da incollare altrove.
-- **Leggere gli appunti:** mostra il testo attualmente copiato.
-- **Impostare promemoria:** mostra una notifica dopo il tempo richiesto; l'assistente deve restare attivo.
 - **Avviare una registrazione:** usa GPU Screen Recorder se installato, altrimenti OBS; puoi chiedere esplicitamente OBS. GSR salva in MP4 con video H.264 e audio AAC; OBS usa le proprie impostazioni.
 - **Fermare una registrazione:** interrompe la cattura e salva il video.
 - **Registrare per un tempo preciso:** registra da 1 a 600 secondi, poi salva automaticamente.
 - **Attivare il buffer di replay:** mantiene pronti gli ultimi secondi dello schermo; con GSR puoi scegliere da 1 a 600 secondi, con OBS usa la durata configurata in OBS.
 - **Salvare il replay:** salva gli ultimi secondi catturati dal replay attivo.
 - **Fermare il buffer di replay:** disattiva la cattura degli ultimi secondi.
+
+## Applicazioni e sistema
+
+- **Aprire applicazioni:** avvia un programma installato.
+- **Verificare applicazioni:** controlla se un programma è installato.
+- **Chiudere applicazioni:** chiede la chiusura del programma indicato.
 - **Cercare pacchetti:** cerca programmi nei repository della distribuzione.
 - **Installare programmi:** apre un terminale per conferma ed eventuale password.
 - **Aggiornare il sistema:** apre la procedura prevista per la distribuzione, con conferma.
+
+## Ricerca, appunti e notifiche
+
+- **Cercare su Google:** apre i risultati nel browser predefinito, senza chiavi API Google.
+- **Mostrare notifiche:** visualizza un messaggio sul desktop.
+- **Copiare testo negli appunti:** prepara il testo da incollare altrove.
+- **Leggere gli appunti:** mostra il testo attualmente copiato.
+- **Impostare promemoria:** mostra una notifica dopo il tempo richiesto; l'assistente deve restare attivo.
+
+## Voce e conversazione
+
 - **Ricordare la conversazione:** mantiene il contesto durante la sessione; al riavvio riparte da zero.
 - **Mostrare i comandi:** scrivi «aiuto» nel terminale per vedere l'elenco disponibile.
-- **Aprire la GUI:** doppio clic su «Kapa.desktop».
-- **Evitare doppie aperture:** altri clic sull'avviatore richiamano la finestra già aperta.
-- **Modalità compatta:** rimpicciolendo la finestra resta solo il microfono; riallargandola tornano tutti i comandi.
-- **Avvio automatico:** aprendo la GUI parte anche l'assistente, con il microfono chiuso.
 - **Parlare su richiesta:** premi «Parla ora» o la scorciatoia; il microfono resta chiuso quando non ascolta.
 - **Configurare la scorciatoia:** il pulsante «Scorciatoie» aiuta a scegliere il tasto nel desktop.
 - **Capire l'ultima richiesta:** la finestra mostra la frase trascritta, l'azione richiesta, il risultato e se è stata usata l'elaborazione locale o Groq. Il registro strutturato resta sul computer, senza audio.
 - **Comandi locali:** play, pausa, traccia successiva/precedente, stop, volume, screenshot, replay, apertura delle app più comuni, lettura degli appunti e registrazione dello schermo (anche a tempo) funzionano senza chiamate a Groq quando la frase è riconosciuta. Richieste complesse o con più azioni passano a Groq.
-- **Ripetizione e riproduzione casuale:** «ripeti la traccia», «ripeti la playlist», «disattiva ripetizione», «attiva riproduzione casuale», «disattiva riproduzione casuale». «Ricomincia il brano» riporta il brano all'inizio. Questi comandi sono locali; il supporto dipende dal player.
-- **Scelta automatica del lettore:** Kapa dà priorità alle sessioni multimediali dei browser disponibili tramite MPRIS (Brave, Firefox, Chromium e altri), scegliendo prima quelle in riproduzione, poi quelle in pausa. Se non rileva browser, sceglie tra i lettori disponibili come Spotify o VLC, con lo stesso ordine. A parità usa l'ordine di rilevamento, senza chiedere quale lettore usare. Un lettore che non risponde non blocca gli altri. Puoi comunque indicare un nome: «metti in pausa Spotify», «metti play su Firefox», «prossima traccia su VLC». Il nome esplicito prevale sulla scelta automatica. Un browser aperto senza sessione MPRIS non è rilevabile come lettore; non viene avviato un lettore assente.
+
+## Finestra e avvio
+
+- **Aprire la GUI:** doppio clic su «Kapa.desktop».
+- **Evitare doppie aperture:** altri clic sull'avviatore richiamano la finestra già aperta.
+- **Modalità compatta:** rimpicciolendo la finestra resta solo il microfono; riallargandola tornano tutti i comandi.
+- **Avvio automatico:** aprendo la GUI parte anche l'assistente, con il microfono chiuso.
 - **Restare in background:** chiudendo la finestra, rimane nel tray se il desktop lo supporta.
 - **Uscire completamente:** clic destro sull'icona nel tray → «Chiudi».
 

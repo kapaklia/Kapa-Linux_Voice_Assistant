@@ -1,0 +1,194 @@
+{
+  "nome": "Kapa",
+  "url": "https://kapaklia.github.io/Kapa-Linux_Voice_Assistant/",
+  "link": {
+    "github": "https://github.com/kapaklia/Kapa-Linux_Voice_Assistant",
+    "release": "https://github.com/kapaklia/Kapa-Linux_Voice_Assistant/releases",
+    "release_attuale": "https://github.com/kapaklia/Kapa-Linux_Voice_Assistant/releases/tag/v0.1.0-alpha.5",
+    "video": "",
+    "licenza": "https://github.com/kapaklia/Kapa-Linux_Voice_Assistant/blob/HEAD/LICENSE",
+    "autore": "https://github.com/kapaklia",
+    "paypal": "https://paypal.me/LChiaraGianfreda"
+  },
+  "logo": "assets/logo.webp",
+  "social": {
+    "file": "assets/social.jpg",
+    "misure": [1200, 630],
+    "it": "Logo di Kapa su sfondo blu petrolio",
+    "en": "Kapa logo on a dark teal background"
+  },
+  "esempi_vocali": [
+    "Apri Firefox",
+    "Abbassa il volume del 20%",
+    "Registra lo schermo per 10 secondi"
+  ],
+  "schermate": [
+    {
+      "file": "assets/pannello-nitido.webp",
+      "misure": [
+        490,
+        720
+      ],
+      "it": "Pannello principale di Kapa",
+      "en": "Kapa’s main panel"
+    }
+  ],
+  "distribuzioni": [
+    [
+      "Nobara",
+      "KDE"
+    ],
+    [
+      "Ubuntu",
+      "GNOME"
+    ],
+    [
+      "Linux Mint",
+      "Cinnamon"
+    ]
+  ],
+  "it": {
+    "titolo_hero": "Assistente vocale per Linux",
+    "descrizione": "Controlla il tuo desktop Linux con la voce. Kapa usa Whisper Small e Groq per i comandi vocali in italiano.",
+    "salta": "Vai al contenuto",
+    "nav": [
+      "Funzionalità",
+      "Installazione",
+      "Supporto"
+    ],
+    "sottotitolo": "Apri app, controlla la musica e cattura lo schermo con la voce. Kapa porta i comandi vocali in italiano sul tuo desktop Linux.",
+    "gratuito": "Gratuito",
+    "voce": "Voce solo in italiano",
+    "esempi": "Prova a dire",
+    "guarda_video": "Guarda Kapa in azione",
+    "funzioni": "Cosa puoi fare con Kapa",
+    "tutti_comandi": "Mostra tutte le funzioni",
+    "schede": [
+      [
+        "Comandi vocali",
+        "Premi il microfono e chiedi a Kapa di eseguire un’azione sul desktop."
+      ],
+      [
+        "Whisper Small",
+        "Trascrive la voce in locale, direttamente sul tuo computer."
+      ],
+      [
+        "Groq",
+        "Interpreta le richieste tramite Internet. Serve una chiave API Groq."
+      ],
+      [
+        "Applicazioni",
+        "Apri o chiudi le applicazioni, come Firefox e VLC, con una richiesta vocale."
+      ],
+      [
+        "Multimedia",
+        "Metti in pausa la riproduzione o regola il volume di sistema."
+      ],
+      [
+        "Screenshot",
+        "Cattura una finestra o uno schermo con gli strumenti disponibili sul tuo desktop."
+      ],
+      [
+        "Registrazione schermo",
+        "Avvia o ferma la registrazione con OBS o GPU Screen Recorder, se installati."
+      ],
+      [
+        "Gestione del sistema",
+        "Cerca pacchetti e avvia aggiornamenti sulle configurazioni supportate."
+      ]
+    ],
+    "compatibilita": "Desktop Linux testati",
+    "installazione": "Come funziona",
+    "passi": [
+      [
+        "Scarica",
+        "Apri le Release su GitHub, scarica lo ZIP di Kapa ed estrailo in una cartella stabile nella tua home."
+      ],
+      [
+        "Installa",
+        "Apri il terminale nella cartella estratta ed esegui il comando come utente normale."
+      ],
+      [
+        "Configura",
+        "Inserisci la tua chiave Groq nel file nascosto .env e avvia Kapa dal menu. Al primo utilizzo della voce viene scaricato Whisper Small."
+      ]
+    ],
+    "supporto": "Sostieni il progetto",
+    "storia": "Kapa è nato dalla mia passione per l'informatica, da qualche idea stravagante e da una bella dose di vibe coding.\n\nQuando i miei cinque figli mi concedono un po' di tregua, mi diverto a lavorarci e a inventarmi nuove funzionalità. 😁\n\nIl progetto è completamente gratuito e le donazioni, sempre facoltative, mi aiutano a dedicargli più tempo e a farlo crescere.",
+    "donazione": "Dona con PayPal"
+  },
+  "en": {
+    "titolo_hero": "Linux Voice Assistant",
+    "descrizione": "Control your Linux desktop by voice. Kapa uses Whisper Small and Groq for Italian voice commands.",
+    "salta": "Skip to content",
+    "nav": [
+      "Features",
+      "Installation",
+      "Support"
+    ],
+    "sottotitolo": "Open apps, control music and capture your screen by voice. Kapa brings Italian voice commands to your Linux desktop.",
+    "gratuito": "Free",
+    "voce": "Italian voice commands only",
+    "esempi": "Try saying these in Italian",
+    "guarda_video": "Watch Kapa in action",
+    "funzioni": "What you can do with Kapa",
+    "tutti_comandi": "Show all features (in Italian)",
+    "schede": [
+      [
+        "Voice commands",
+        "Press the microphone button and ask Kapa to perform an action on your desktop."
+      ],
+      [
+        "Whisper Small",
+        "Transcribes speech locally, right on your computer."
+      ],
+      [
+        "Groq",
+        "Interprets requests online. A Groq API key is required."
+      ],
+      [
+        "Applications",
+        "Open or close apps such as Firefox and VLC with a voice command."
+      ],
+      [
+        "Media controls",
+        "Pause playback or adjust your system volume."
+      ],
+      [
+        "Screenshots",
+        "Capture a window or screen with the tools available on your desktop."
+      ],
+      [
+        "Screen recording",
+        "Start or stop recordings with OBS or GPU Screen Recorder when installed."
+      ],
+      [
+        "System management",
+        "Find packages and start updates on supported setups."
+      ]
+    ],
+    "compatibilita": "Tested Linux desktops",
+    "installazione": "How it works",
+    "passi": [
+      [
+        "Download",
+        "Open GitHub Releases, download the Kapa ZIP and extract it to a permanent folder in your home directory."
+      ],
+      [
+        "Install",
+        "Open a terminal in the extracted folder and run this command as a regular user."
+      ],
+      [
+        "Set up",
+        "Add your Groq key to the hidden .env file and open Kapa from your application menu. Whisper Small downloads the first time you use voice input."
+      ]
+    ],
+    "supporto": "Support the project",
+    "storia": "Kapa grew out of my passion for computing, a few offbeat ideas, and a healthy dose of vibe coding.\n\nWhen my five kids give me a bit of breathing room, I enjoy tinkering with it and dreaming up new features. 😁\n\nThe project is completely free. Donations are always optional and help me spend more time on it and let it grow.",
+    "donazione": "Donate with PayPal"
+  },
+  "pulsanti": {
+    "download": "Download Kapa",
+    "github": "View on GitHub"
+  }
+}

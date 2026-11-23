@@ -1,0 +1,19 @@
+:root {
+  /* Colori principali */
+  --sfondo: #101d24;
+  --testo: #eff6f5;
+  --testo-secondario: #b3c7cb;
+  --accento: #78e3d6;
+  --testo-pulsante: #07302d;
+  --pannello: #1c323bb8;
+  --bordo: #9bc6cb30;
+
+  /* Sfondo originale della GUI e intensità degli effetti (da 0 a 1). */
+  --immagine-sfondo: url("assets/sfondo.webp");
+  --visibilita-sfondo: .43;
+  --intensita-fasci: .54;
+  --visibilita-particelle: .30;
+
+  /* Riduci questa misura per avere più particelle nella stessa area. */
+  --passo-particelle: 108px;
+}

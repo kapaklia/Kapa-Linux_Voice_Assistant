@@ -42,6 +42,7 @@ conversazione_*.json
 htmlcov/
 build/
 dist/
+!/sito/dist/
 *.egg-info/
 .tox/
 .nox/
