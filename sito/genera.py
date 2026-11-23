@@ -3,6 +3,7 @@ import json
 import re
 from html import escape
 from pathlib import Path
+from shutil import copyfile
 from urllib.parse import urlsplit
 
 ROOT = Path(__file__).resolve().parent
@@ -182,6 +183,10 @@ def render(lang):
 
 
 if __name__ == "__main__":
-    for language, directory in (("it", ROOT / "dist"), ("en", ROOT / "dist" / "en")):
+    output = ROOT / "dist"
+    for language, directory in (("it", output), ("en", output / "en")):
         directory.mkdir(parents=True, exist_ok=True)
         (directory / "index.html").write_text(render(language), encoding="utf-8")
+
+    verification_file = "google3e8fb6dec95ee5b9.html"
+    copyfile(ROOT / verification_file, output / verification_file)
