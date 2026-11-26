@@ -1,13 +1,17 @@
-"""Generate the two static pages from contenuti.json."""
+"""Generate the two static pages and their sitemap from contenuti.json."""
 import json
 import re
 from html import escape
 from pathlib import Path
 from shutil import copyfile
 from urllib.parse import urlsplit
+from xml.etree import ElementTree as ET
 
 ROOT = Path(__file__).resolve().parent
 DATA = json.loads((ROOT / "contenuti.json").read_text(encoding="utf-8"))
+BASE_URL = DATA["url"].rstrip("/") + "/"
+PAGE_PATHS = {"it": "", "en": "en/"}
+PAGE_URLS = {lang: BASE_URL + path for lang, path in PAGE_PATHS.items()}
 GUIDE = (ROOT.parent / "COSA_SA_FARE.md").read_text(encoding="utf-8")
 COMMAND_GROUPS = re.findall(
     r"^## ([^\n]+)\n(.*?)(?=^## |\Z)", GUIDE.split("\n## Miniguida:", 1)[0], re.M | re.S
@@ -39,8 +43,7 @@ def render(lang):
     name = escape(DATA["nome"])
     title = f"{name} — {tr['titolo_hero']}"
     prefix = "./" if lang == "it" else "../"
-    base = DATA["url"].rstrip("/") + "/"
-    canonical = base if lang == "it" else base + "en/"
+    canonical = PAGE_URLS[lang]
     links = {key: escape(value) for key, value in DATA["link"].items()}
     buttons = {key: escape(value) for key, value in DATA["pulsanti"].items()}
     logo = escape(prefix + DATA["logo"])
@@ -80,7 +83,7 @@ def render(lang):
         steps.append(f'<li><span class="step-number" aria-hidden="true">{number}</span>'
                      f'<h3>{escape(step_name)}</h3><p>{escape(body)}</p>{command}</li>')
     social = DATA["social"]
-    og_image = escape(base + social["file"])
+    og_image = escape(BASE_URL + social["file"])
     image_width, image_height = social["misure"]
     image_alt = escape(social[lang])
     examples = "".join(f'<li>«{escape(example)}»</li>' for example in DATA["esempi_vocali"])
@@ -98,9 +101,9 @@ def render(lang):
   <meta name="description" content="{tr['descrizione']}">
   <meta name="theme-color" content="#101d24">
   <link rel="canonical" href="{escape(canonical)}">
-  <link rel="alternate" hreflang="it" href="{escape(base)}">
-  <link rel="alternate" hreflang="en" href="{escape(base + 'en/')}">
-  <link rel="alternate" hreflang="x-default" href="{escape(base)}">
+  <link rel="alternate" hreflang="it" href="{escape(BASE_URL)}">
+  <link rel="alternate" hreflang="en" href="{escape(PAGE_URLS['en'])}">
+  <link rel="alternate" hreflang="x-default" href="{escape(BASE_URL)}">
   <meta property="og:type" content="website">
   <meta property="og:title" content="{title}">
   <meta property="og:description" content="{tr['descrizione']}">
@@ -184,9 +187,17 @@ def render(lang):
 
 if __name__ == "__main__":
     output = ROOT / "dist"
-    for language, directory in (("it", output), ("en", output / "en")):
+    for language, path in PAGE_PATHS.items():
+        directory = output / path
         directory.mkdir(parents=True, exist_ok=True)
         (directory / "index.html").write_text(render(language), encoding="utf-8")
 
     verification_file = "google3e8fb6dec95ee5b9.html"
     copyfile(ROOT / verification_file, output / verification_file)
+
+    sitemap = ET.Element("urlset", xmlns="http://www.sitemaps.org/schemas/sitemap/0.9")
+    for page_url in PAGE_URLS.values():
+        entry = ET.SubElement(sitemap, "url")
+        ET.SubElement(entry, "loc").text = page_url
+    ET.indent(sitemap)
+    ET.ElementTree(sitemap).write(output / "sitemap.xml", encoding="utf-8", xml_declaration=True)
